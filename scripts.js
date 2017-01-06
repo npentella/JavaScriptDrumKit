@@ -6,3 +6,10 @@ window.addEventListener('keydown', function(e) {
 	audio.currentTime = 0;
 	audio.play();
 });
+
+function removeTransition(e) {
+	this.classList.remove('playing');
+};
+
+var icons = document.querySelectorAll('.key');
+icons.forEach( icon => icon.addEventListener("transitionend", removeTransition) );
